@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 INI=$1
 WORKING=$(pwd)/working/
 OUTPUT=$(pwd)/output/
@@ -24,6 +26,11 @@ echo "Cloning $repo to ${WORKING}known..."
 mkdir $WORKING
 git clone $repo ${WORKING}known
 rm -rf ${WORKING}known/.git
+
+cd $WORKING
+composer install
+cd ..
+
 
 echo "Loading build details from ${WORKING}known/version.known"
 while IFS='= ' read var val
