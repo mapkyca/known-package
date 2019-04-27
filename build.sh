@@ -27,9 +27,10 @@ mkdir $WORKING
 git clone $repo ${WORKING}known
 rm -rf ${WORKING}known/.git
 
-cd $WORKING
-composer install
-cd ..
+cd ${WORKING}known
+composer install --no-dev --prefer-dist
+echo "revision = \"$(git rev-parse --short HEAD)\"" >> version.known
+cd ../..
 
 
 echo "Loading build details from ${WORKING}known/version.known"
