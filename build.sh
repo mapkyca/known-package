@@ -49,6 +49,7 @@ done < ${WORKING}known/version.known
 
 filename=$(echo $filename | sed "s/\$version/${version}/g")
 filename=$(echo $filename | sed "s/\$build/${build}/g")
+filename=$(echo $filename | sed "s/'//g")
 
 mkdir $OUTPUT
 
