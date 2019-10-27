@@ -28,7 +28,7 @@ git clone $repo ${WORKING}known
 rm -rf ${WORKING}known/.git
 
 cd ${WORKING}known
-composer install --no-dev --prefer-dist
+composer install --no-dev --prefer-dist --ignore-platform-reqs
 echo "revision = \"$(git rev-parse --short HEAD)\"" >> version.known
 cd ../..
 
