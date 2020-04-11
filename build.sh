@@ -55,9 +55,9 @@ mkdir $OUTPUT
 
 cd ${WORKING}known/
 echo "Building $filename.zip in $OUTPUT"
-zip -r ${OUTPUT}$filename.zip *
+zip -r ${OUTPUT}$filename.zip .
 echo "Building $filename.tgz in $OUTPUT"
-tar -cvzf ${OUTPUT}$filename.tgz *
+tar -cvzf ${OUTPUT}$filename.tgz .
 cd -
 
 echo "Creating signatures..."
